@@ -1,0 +1,12 @@
+#background {
+  background: url('background.svg') no-repeat;
+  width: 1000px;
+  height: 1000px;
+  float: left;
+}
+
+
+#elements {
+  float: left;
+  width: 500px;
+}
