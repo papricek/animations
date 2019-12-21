@@ -7,7 +7,7 @@ const data = {
     },
     {
      name: 'router_cisco',
-     areas: ['routers'],
+     areas: ['routers', 'server'],
     },
     {
      name: 'server',
@@ -23,7 +23,6 @@ const data = {
       width: 175,
       height: 65
     },
-
     {
       name: 'server',
       x: 50,
@@ -63,7 +62,9 @@ $( function() {
   data.elements.forEach((element) => {
     $( "#elements-" + element.name ).draggable({
       stop: (event, ui) => {
-        console.log(isInsideOfArea(element.areas[0], element.name))
+        element.areas.forEach((name) => {
+          console.log(element.name + " is inside of " + name + ":" + isInsideOfArea(name, element.name))  
+        })
       }
     });
   })
